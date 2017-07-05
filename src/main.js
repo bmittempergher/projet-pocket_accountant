@@ -53,6 +53,15 @@ new Vue({
     computed: {
         depenses: function () {
             return this.listTransactions.reduce((total, transaction) => total + transaction.montant, 0);
+        },
+        listGroupe () {
+            return this.listTransactions.reduce((totauxCat, transaction) => {
+                if (!totauxCat.hasOwnProperty(transaction.categorie)) {
+                    totauxCat[transaction.categorie] = 0;
+                }
+                totauxCat[transaction.categorie] += transaction.montant;
+                return totauxCat;
+            }, {});
         }
     }
 });
