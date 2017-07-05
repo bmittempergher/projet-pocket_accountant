@@ -22,7 +22,27 @@
 > Donne la possibilité d'ajouter de nouvelles transactions. L'ajout se fait par le biais d'un formulaire comportant un champ texte représentant le libellé, un sélecteur avec les images représentant les catégories et un champs numérique qui accueil le montant de la dépense.
 
 4. Graphique
-> Un graphique
+> Un graphique en cercle dans lequel s'affiche les totaux des différentes catégories. Il est possible de masquer une ou plusieurs catégories. 
+
+## Données
+
+1. Catégories
+
+    * Allimentaire
+    
+        * glyphicon-food
+    * Loisirs
+
+        * glyphicon-ball
+    * Factures
+
+        * glyphicon-bill
+    * Autres
+
+        * glyphicon-...
+    * Divers
+
+        * glyphicon-money
 
 ## A voir
 
