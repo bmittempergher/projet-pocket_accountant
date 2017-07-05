@@ -1,8 +1,17 @@
 <template>
     <div>
-      <ul class="list-group">
-          <operation v-for="(o, index) in list" :key="index" :ope="o"></operation>
-      </ul>
+        <h1>Liste des transactions</h1>
+        <ul class="list-group">
+            <operation v-for="(o, index) in list" :key="index" :ope="o"></operation>
+        </ul>
+        <div class="row">
+            <div class="col-xs-8">
+                <h3>Total</h3>
+            </div>
+            <div class="col-xs-4">
+                {{ this.$root.Total }}
+            </div>
+        </div>
     </div>
 </template>
 
