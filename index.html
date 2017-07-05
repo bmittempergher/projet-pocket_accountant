@@ -9,28 +9,36 @@
     <title>pocket_accountant</title>
   </head>
   <body>
-    <h1>Pocket Accountant</h1>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">WebSiteName</a>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span> 
+          </button>
+          <a class="navbar-brand" href="#">Pocket Accountant</a>
       </div>
-      <ul class="nav navbar-nav">
-        <li>
-          <a href="/#/depenses">Dépenses</a>
-        </li>
-        <li>
-          <a href="/#/transactions/">Transactions</a>
-        </li>
-        <li>
-          <a href="/#/nouveau/">Nouveau</a>
-        </li>
-        <li>
-          <a href="/#/graphique/">Graphique</a>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li>
+            <a href="/#/depenses">Dépenses</a>
+          </li>
+          <li>
+            <a href="/#/transactions/">Transactions</a>
+          </li>
+          <li>
+            <a href="/#/nouveau/">Nouveau</a>
+          </li>
+          <li>
+            <a href="/#/graphique/">Graphique</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-    <div id="app"></div>
+    <div class="container" >
+      <div id="app"></div>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>
