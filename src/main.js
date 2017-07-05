@@ -31,7 +31,6 @@ new Vue({
         }
         return {
             budget: 400.00,
-            depenses: 380.00,
             listTransactions,
             listCategories: [
               { nom: 'Alimentaire', couleur: '#FF0000', image: 'url' },
@@ -52,10 +51,9 @@ new Vue({
         }
     },
     computed: {
-        totalDepenses () {
-            this.listTransactions.forEach(function (element) {
-                // total = total + element.montant;
-            });
+        depenses: function () {
+            return this.listTransactions.reduce((total, transaction) => total + transaction.montant, 0);
         }
     }
 });
+

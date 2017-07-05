@@ -6,6 +6,7 @@
       <input id="budget" size="8" type="number" v-model="$root.budget"> CHF
     </div>
     <p>{{ $root.budget }}</p>
+    <p>{{ $root.total }}</p>
   
     <div class="progress">
       <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" v-bind:aria-valuemax="percent" v-bind:style="'width:'+$root.depenses / $root.budget * 100+'%'">
