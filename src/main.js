@@ -63,7 +63,7 @@ $(document).ready(() => {
         },
         computed: {
             depenses: function () {
-                return this.listTransactions.reduce((total, transaction) => total + transaction.montant, 0);
+                return parseFloat(this.listTransactions.reduce((total, transaction) => total + transaction.montant, 0)).toFixed(2);
             },
             listGroupe () {
                 return this.listTransactions.reduce((totauxCat, transaction) => {
@@ -83,7 +83,7 @@ $(document).ready(() => {
                 const d = new Date();
                 let newDate = d.getDay() + '.' + d.getMonth() + '.' + d.getFullYear();
                 if (newCat != null && newNote != null && newMontant != null) {
-                    const transaction = { date: newDate, categorie: newCat, note: newNote, montant: newMontant };
+                    const transaction = { date: newDate, categorie: newCat, note: newNote, montant: parseFloat(newMontant) };
                     this.listTransactions.push(transaction);
                 }
             },

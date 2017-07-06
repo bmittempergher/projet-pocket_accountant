@@ -12,7 +12,7 @@
                 <h3>Total</h3>
             </div>
             <div class="col-xs-3">
-                <h3>{{ total.toFixed(2) }}</h3>
+                <h3>{{ total }}</h3>
             </div>
         </div>
     </div>

@@ -15,7 +15,7 @@
           {{ ope.note }}
         </div>
         <div class="col-xs-2">
-          {{ ope.montant.toFixed(2) }}
+          {{ parseFloat(ope.montant).toFixed(2) }}
         </div>
         <div class="col-xs-2">
           <button v-on:click="$emit('supprimerDepense', ope)" class="btn btn-danger">x</button>

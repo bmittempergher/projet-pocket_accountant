@@ -38,7 +38,7 @@
         <h3><b>Total</b></h3>
       </div>
       <div class="col-xs-4 text-right">
-        <h3><b>{{ $root.depenses.toFixed(2) }} CHF</b></h3>
+        <h3><b>{{ $root.depenses }} CHF</b></h3>
       </div>
     </div> 
   </div>
