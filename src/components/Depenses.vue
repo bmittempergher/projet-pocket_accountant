@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div>
     <h1>Dépenses</h1>
     <div class="row">
       <label for="budget">Budget</label>
@@ -10,24 +10,22 @@
   
     <div class="progress">
       <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuemax="100" aria-valuemin="0" v-bind:aria-valuenow="$root.pourcentage" v-bind:style="'width:'+$root.pourcentage+'%'">
-        <span>{{ $root.pourcentage }}</span>
+        <span>{{ $root.depenses }}</span>
       </div>
     </div>
-    </div>
-    </div>
-  
-    <div v-for="(montant, categorie) in $root.listGroupe" v-bind:key="categorie">
+  <!-- -->
+    <div v-for="(el, index) in listCat" v-bind:key="index">
       <div class="row">
-        <div class="col-xs-1 text-left" v-bind:style="'background-color:'+$root.getCategorieByName(categorie)[0].couleur">-</div>
+        <div class="col-xs-1 text-left">-</div>
         <div class="col-xs-7 text-left">
-          <h5>{{categorie}}</h5>
+          <h5>{{el.nom}}</h5>
         </div>
         <div class="col-xs-4 text-right">
-          <h5>{{montant}} CHF</h5>
+          <h5>{{groupe[el.nom]}} CHF</h5>
         </div>
       </div>
     </div>
-  
+ 
     <div class="row">
       <div class="col-xs-8 text-left">
         <h5><b>Total</b></h5>
@@ -35,16 +33,17 @@
       <div class="col-xs-4 text-right">
         <h5><b>{{ $root.depenses }} CHF</b></h5>
       </div>
-    </div>
+    </div> 
   </div>
 </template>
 
 <script>
 export default {
-    name: 'hello',
+    name: 'Depenses',
     data () {
         return {
-            msg: 'hello'
+            groupe: this.$root.listGroupe,
+            listCat: this.$root.listCategories
         };
     }
 };

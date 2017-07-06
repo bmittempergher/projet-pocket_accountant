@@ -73,31 +73,10 @@ $(document).ready(() => {
                     totauxCat[transaction.categorie] += transaction.montant;
                     return totauxCat;
                 }, {});
+            },
+            pourcentage () {
+                return this.depenses / this.budget * 100;
             }
         }
     });
 });
-let data = {
-    datasets: [{
-        data: [50, 50],
-        backgroundColor: ['White', 'rgba(0, 0, 0, 0.0)'],
-        borderWidth: [1, 1]
-    }]
-};
-let options = {
-    responsive: true,
-    tooltips: false,
-    animation: {
-        animateScale: true,
-        animateRotate: true
-    },
-    cutoutPercentage: 75,
-    hover: {mode: null}
-};
-    /* eslint-disable no-new */
-new Chart('chart', {
-    type: 'doughnut',
-    data: data,
-    options: options
-});
-
