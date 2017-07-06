@@ -24,9 +24,7 @@
 4. Graphique
 > Un graphique en cercle dans lequel s'affiche les totaux des différentes catégories. Il est possible de masquer une ou plusieurs catégories. 
 
-## Données
-
-1. Catégories
+5. Catégories des dépenses :
 
     * Alimentaire
     * Loisirs
@@ -35,7 +33,61 @@
     * Habillement
     * Divers
 
-## Environnement
+# Architecture et naviguation
+
+## Navigation
+* La navigation entre les différentes pages se fait avec une barre de naviguation bootstrap qui se trouve dans index.html
+    * Nouveau : Permet d'ajouter une dépenses
+    * Transactions : Affiche les transactions
+    * Dépenses : Affiches les dépenses par catégorie et comparaison avec le budget
+    * Graphique : Affiche les déponeses par catégorie dans un graphique
+
+## Routes
+```bash
+#src/routeur/index.js
+routes: [
+    {
+        path: '/',
+        name: 'Depenses',
+        component: Depenses
+    },
+    {
+        path: '/nouveau/',
+        name: 'Nouveau',
+        component: Nouveau
+    },
+    {
+        path: '/graphique/',
+        name: 'Graphique',
+        component: Graphique
+    },
+    {
+        path: '/transactions/',
+        name: 'Transactions',
+        component: Transactions
+    }
+]
+```
+
+## Composants
+
+* index.html --> Contien la div "app"
+    * src/App.vue
+        * src/components/Depenses.vue --> Affiche les dépenses par catégorie et une comparaison par rapport au budget
+        * src/components/Graphique.vue --> Affiche un graphique des dépenses par catégorie
+        * src/components/Nouveau.vue --> Permet d'ajouter une dépenses
+        * src/components/Transactions.vue --> Affiche la liste des dépenses
+            * src/components/Operation.vue --> Affiche une dépense
+* src/main.js --> Contient les données et les fonctions
+* src/routeur/index.js --> Contient les routes
+
+## Données
+Si le local storage est vide une liste de transactions se charge par défaut (main.js).Les catégories sont définies dans main.js.
+* Categorie {nom, couleur, image}
+* Transaction {date, categorie, note, montant} 
+
+
+# Environnement
 * [node.js] - Platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications
 * [npm] - Package manager for JavaScript bundled with Node.js and can run some tasks
 * [webpack] - Open-source JavaScript module bundler
@@ -62,11 +114,7 @@ Télécharger et installer Node.js
 ### 2. Utiliser vue init pour créer notre nouveau proget
     vue init webpack pocket_accountant
 
-### 3. Ouverture du projet et installation des dépendances
-Pour ouvrir le projet, il faut se positionner sur le dossier de votre projet à l'intérieur de GitShell. Pour se faire utiliser les commandes de navigation `cd`. 
-Dans mon cas cela donne : `~\Documents\pocket_accountant`
-
-    code .
+### 3. Installation des dépendances
     npm install
 
 ### 4. Configuration
@@ -91,9 +139,9 @@ Dans mon cas cela donne : `~\Documents\pocket_accountant`
 ### 7. Finir l'installation de Jquery et Bootstrap
 #### 7.1 Dans le fichier **src/main.js**
     import $ from 'jquery';
-    import '../node_modules/bootstrap';
-    import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-    import '../node_modules/bootswatch/cosmo/bootstrap.min.css';
+    import 'bootstrap';
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    import 'bootswatch/cosmo/bootstrap.min.css';
 
 
 ### 8. Créer un fichier pour customiser personnelement vos pages
@@ -106,7 +154,7 @@ Dans mon cas cela donne : `~\Documents\pocket_accountant`
 
 > Bootstrap
 
-> Bootswatch - Readable
+> Bootswatch - Cosmo
 
 ## Git
 
