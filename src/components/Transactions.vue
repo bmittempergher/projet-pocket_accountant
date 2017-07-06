@@ -4,17 +4,6 @@
         <ul class="list-group">
             <operation v-for="(o, index) in list" :key="index" v-bind:ope="o" v-on:supprimer="$root.supprimerDepense(o)"></operation>
         </ul>
-        <div class="row">
-            <div class="col-xs-3">
-            <p></p>
-            </div>
-            <div class="col-xs-4 text-right">
-                <h3>Total</h3>
-            </div>
-            <div class="col-xs-5 text-right">
-                <h3>{{ total }} CHF</h3>
-            </div>
-        </div>
     </div>
 </template>
 
@@ -25,7 +14,6 @@ import operation from './Operation';
 export default {
     data () {
         return {
-            total: this.$root.depenses,
             list: this.$root.listTransactions
         };
     },
