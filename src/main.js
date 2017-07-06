@@ -4,9 +4,9 @@ import $ from 'jquery';
 import Vue from 'vue';
 import App from './App';
 import router from './router';
-import '../node_modules/bootstrap';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/bootswatch/cosmo/bootstrap.min.css';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootswatch/journal/bootstrap.min.css';
 
 Vue.config.productionTip = false;
 
@@ -29,27 +29,27 @@ $(document).ready(() => {
                 }
             } catch (e) {
                 listTransactions = [
-                { date: '05.07.2017', categorie: 'Alimentaire', note: 'McDonald', montant: 16.80 },
-                { date: '06.07.2017', categorie: 'Loisirs', note: 'Jeu', montant: 20.80 },
-                { date: '05.07.2017', categorie: 'Alimentaire', note: 'SubWay', montant: 11.20 },
-                { date: '06.07.2017', categorie: 'Loisirs', note: 'Piscine', montant: 12.80 },
-                { date: '05.07.2017', categorie: 'Alimentaire', note: 'McDonald', montant: 16 },
-                { date: '06.07.2017', categorie: 'Loisirs', note: 'Jeu', montant: 20.80 },
-                { date: '05.07.2017', categorie: 'Transport', note: 'AG', montant: 68 },
-                { date: '06.07.2017', categorie: 'Divers', note: 'Facture salt', montant: 39 },
-                { date: '08.07.2017', categorie: 'Habillement', note: 'Pull', montant: 40.80 }
+                { date: '4.7.2017', categorie: 'Alimentaire', note: 'McDonald', montant: 16.80 },
+                { date: '4.7.2017', categorie: 'Loisirs', note: 'Jeu', montant: 20.80 },
+                { date: '5.7.2017', categorie: 'Alimentaire', note: 'SubWay', montant: 11.20 },
+                { date: '5.7.2017', categorie: 'Loisirs', note: 'Piscine', montant: 12.80 },
+                { date: '5.7.2017', categorie: 'Logement', note: 'Loyer', montant: 150 },
+                { date: '6.7.2017', categorie: 'Loisirs', note: 'Jeu', montant: 20.80 },
+                { date: '6.7.2017', categorie: 'Transport', note: 'AG', montant: 68 },
+                { date: '6.7.2017', categorie: 'Divers', note: 'Facture salt', montant: 39 },
+                { date: '6.7.2017', categorie: 'Habillement', note: 'Pull', montant: 40.80 }
                 ];
             }
             return {
                 budget: 400.00,
                 listTransactions,
                 listCategories: [
-                { nom: 'Alimentaire', couleur: '#29B6F6', image: '../static/img/icon_alimentaire.jpg' },
-                { nom: 'Loisirs', couleur: '#9CCC65', image: '../static/img/icon_loisir.jpg' },
-                { nom: 'Logement', couleur: '#FFEE58', image: '../static/img/icon_logement.jpg' },
-                { nom: 'Transport', couleur: '#FFA726', image: '../static/img/icon_transport.jpg' },
-                { nom: 'Habillement', couleur: '#AB47BC', image: '../static/img/icon_habit.jpg' },
-                { nom: 'Divers', couleur: '#EF5350', image: '../static/img/icon_divers.jpg' }
+                { nom: 'Alimentaire', couleur: '#29B6F6', image: './static/img/icon_alimentaire.jpg' },
+                { nom: 'Loisirs', couleur: '#9CCC65', image: './static/img/icon_loisir.jpg' },
+                { nom: 'Logement', couleur: '#FFEE58', image: './static/img/icon_logement.jpg' },
+                { nom: 'Transport', couleur: '#FFA726', image: './static/img/icon_transport.jpg' },
+                { nom: 'Habillement', couleur: '#AB47BC', image: './static/img/icon_habit.jpg' },
+                { nom: 'Divers', couleur: '#EF5350', image: './static/img/icon_divers.jpg' }
                 ]
             };
         },
@@ -89,6 +89,7 @@ $(document).ready(() => {
             },
             supprimerDepense (transaction) {
                 this.listTransactions.splice(this.listTransactions.indexOf(transaction), 1);
+                // localStorage.removeItem(transaction);
             }
         }
     });

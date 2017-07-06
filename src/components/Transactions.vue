@@ -2,7 +2,7 @@
     <div>
         <h1>Liste des transactions</h1>
         <ul class="list-group">
-            <operation v-for="(o, index) in list" :key="index" :ope="o"></operation>
+            <operation v-for="(o, index) in list" :key="index" v-bind:ope="o" v-on:supprimer="$root.supprimerDepense()"></operation>
         </ul>
         <div class="row">
             <div class="col-xs-7">
