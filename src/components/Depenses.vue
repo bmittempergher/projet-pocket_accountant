@@ -34,10 +34,10 @@
     </ul>
  
     <div class="row">
-      <div class="col-xs-8 text-left">
+      <div class="col-xs-6 text-left">
         <h3><b>Total</b></h3>
       </div>
-      <div class="col-xs-4 text-right">
+      <div class="col-xs-6 text-right">
         <h3><b>{{ $root.depenses }} CHF</b></h3>
       </div>
     </div> 
