@@ -58,7 +58,7 @@
         </div>
         <div class="row">
           <div class="col-xs-12">
-            <button v-on:click="$root.ajouterDepense(newCat, newNote, newMontant)" class="btn btn-success"><a href="#/transactions">Valider</a></button>
+            <a href="#/transactions"><button v-on:click="$root.ajouterDepense(newCat, newNote, newMontant)" class="btn btn-success">Valider</button></a>
           </div>
         </div>
   </div>
