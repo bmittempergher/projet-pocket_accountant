@@ -44,6 +44,7 @@
                   <span class="input-group-addon"> 
                     <input type="radio" v-model="newCat" :value="el.nom" :id="el.nom" name="Categorie">
                     <img :src="el.image" :alt="el.nom" width="50px" height="50px"> 
+                    <h4>{{el.nom}}</h4>
                   </span>
                 </label> 
               </div>              
@@ -56,11 +57,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 col-xs-6">
-            <button v-on:click="$root.ajouterDepense(newCat, newNote, newMontant)" class="btn btn-default"><a href="/#/transactions">Valider</a></button>
-          </div>
-          <div class="col-md-6 col-xs-6">
-            <button type="submit" class="btn btn-danger">Effacer</button>
+          <div class="col-xs-12">
+            <button v-on:click="$root.ajouterDepense(newCat, newNote, newMontant)" class="btn btn-success"><a href="#/transactions">Valider</a></button>
           </div>
         </div>
   </div>
