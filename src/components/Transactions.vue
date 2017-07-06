@@ -5,11 +5,14 @@
             <operation v-for="(o, index) in list" :key="index" :ope="o"></operation>
         </ul>
         <div class="row">
-            <div class="col-xs-8">
+            <div class="col-xs-7">
+                <hr><hr>
+            </div>
+            <div class="col-xs-2">
                 <h3>Total</h3>
             </div>
-            <div class="col-xs-4">
-                {{ this.$root.Total }}
+            <div class="col-xs-3">
+                <h3>{{ total }}</h3>
             </div>
         </div>
     </div>
@@ -22,6 +25,7 @@ import operation from './Operation';
 export default {
     data () {
         return {
+            total: this.$root.depenses,
             list: this.$root.listTransactions
         };
     },

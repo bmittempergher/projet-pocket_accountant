@@ -9,33 +9,19 @@
           <input id="note" v-model="newNote">
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <input type="radio" name="cat" id="Alimentaire" value="Alimentaire" v-model="newCat">
-          <label for="Loisirs">Alimentaire</label>
+      <div class="input-group">
+        <div v-for="(el, index) in ListCat" :key="index">
+          <div class="col-xs-6">
+            <span class="input-group-addon">
+              <input type="radio" v-model="newCat" :value="el.nom" :id="el.nom" name="Categorie">
+            </span>
+                <label v-bind:for="el.nom">
+                  <img :src="el.image" class="img-thumbnail" :alt="el.nom">
+                </label>
+              </input>
+            
+          </div>
         </div>
-        <div class="col-md-4">
-          <input type="radio" name="cat" id="Loisirs" value="Loisirs" v-model="newCat">
-          <label for="Loisirs">Loisirs</label>
-        </div>
-        <div class="col-md-4">
-          <input type="radio" name="cat" id="Logement" value="Logement" v-model="newCat">
-          <label for="Logement">Logement</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <input type="radio" name="cat" id="Transport" value="Transport" v-model="newCat">
-          <label for="Transport">Transport</label>
-        </div>
-        <div class="col-md-4">
-          <input type="radio" name="cat" id="Habillement" value="Habillement" v-model="newCat">
-          <label for="Habillement">Habillement</label>
-        </div>
-        <div class="col-md-4">
-          <input type="radio" name="cat" id="Divers" value="Divers" v-model="newCat">
-          <label for="Divers">Divers</label>
-      </div>
       </div>
       <div class="row">
         <div class="col-md-6 col-xs-12">
@@ -46,13 +32,16 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 col-xs-12">
+        <div class="col-md-6 col-xs-6">
           <button type="submit" class="btn btn-success">Valider</button>
         </div>
-        <div class="col-md-6 col-xs-12">
+        <div class="col-md-6 col-xs-6">
           <button type="submit" class="btn btn-danger">Effacer</button>
         </div>
       </div>
+      La note : {{ newNote }} /
+      La catégorie : {{ newCat }} /
+      Le montant : {{ newMontant }}
   </div>
 </template>
 
@@ -60,8 +49,10 @@
 export default {
     data () {
         return {
+            ListCat: this.$root.listCategories,
             newNote: '',
             newCat: '',
+            newMontant: '',
             msg: 'Nouveau'
         };
     }

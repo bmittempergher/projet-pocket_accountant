@@ -5,9 +5,9 @@
       <label for="budget">Budget</label>
       <input id="budget" size="8" type="number" v-model="$root.budget"> CHF
     </div>
-
-    <div class="row">
-      <div class="col-xs-12 text-left">
+    <p>{{ $root.budget }}</p>
+    <p>{{ $root.depenses }}</p>
+  
     <div class="progress">
       <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuemax="100" aria-valuemin="0" v-bind:aria-valuenow="$root.pourcentage" v-bind:style="'width:'+$root.pourcentage+'%'">
         <span>{{ $root.pourcentage }}</span>
@@ -36,7 +36,6 @@
         <h5><b>{{ $root.depenses }} CHF</b></h5>
       </div>
     </div>
-  
   </div>
 </template>
 
