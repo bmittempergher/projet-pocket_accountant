@@ -18,7 +18,7 @@
           {{ ope.montant }}
         </div>
         <div class="col-xs-2">
-          <button v-on:click="$emit('Delete', person)" class="btn btn-danger">x</button>
+          <button v-on:click="$emit('supprimerDepense', ope)" class="btn btn-danger">x</button>
         </div>
       </div>  
     </li>
