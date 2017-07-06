@@ -77,6 +77,19 @@ $(document).ready(() => {
             pourcentage () {
                 return this.depenses / this.budget * 100;
             }
+        },
+        methods: {
+            ajouterDepense (newCat, newNote, newMontant) {
+                const d = new Date();
+                let newDate = d.getDay() + '.' + d.getMonth() + '.' + d.getFullYear();
+                if (newCat != null && newNote != null && newMontant != null) {
+                    const transaction = { date: newDate, categorie: newCat, note: newNote, montant: newMontant };
+                    this.listTransactions.push(transaction);
+                }
+            },
+            supprimerDepense (transaction) {
+                this.listTransactions.splice(this.listTransactions.indexOf(transaction), 1);
+            }
         }
     });
 });
