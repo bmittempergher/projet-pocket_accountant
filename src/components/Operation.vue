@@ -6,7 +6,10 @@
           {{ ope.date }}
         </div>
         <div class="col-xs-3">
-          {{ ope.categorie }}
+          <span v-for="(cat, index) in listCat" :key="index">
+            <img v-if="cat.nom === ope.categorie" :src="cat.image" :alt="cat.nom" width="40px" height="40px">
+          </span>
+          <!-- {{ ope.categorie }} -->
         </div>
         <div class="col-xs-3">
           {{ ope.note }}
@@ -27,6 +30,7 @@ export default {
     props: ['ope'],
     data () {
         return {
+            listCat: this.$root.listCategories,
             msg: 'Operation'
         };
     }

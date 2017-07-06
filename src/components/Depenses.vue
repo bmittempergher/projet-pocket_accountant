@@ -4,34 +4,41 @@
     <div class="row">
       <label for="budget">Budget</label>
       <input id="budget" size="8" type="number" v-model="$root.budget"> CHF
-    </div>
-    <p>{{ $root.budget }}</p>
-    <p>{{ $root.depenses }}</p>
-  
-    <div class="progress">
-      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuemax="100" aria-valuemin="0" v-bind:aria-valuenow="$root.pourcentage" v-bind:style="'width:'+$root.pourcentage+'%'">
-        <span>{{ $root.depenses }}</span>
+    </div>  
+    <div class="row">
+      <div class="col-xs-12">
+          <div class="progress">
+            <div  class="progress-bar progress-bar-danger" role="progressbar" aria-valuemax="100" aria-valuemin="0" v-bind:aria-valuenow="$root.pourcentage" v-bind:style="'width:'+$root.pourcentage+'%'">
+              <span>{{ $root.depenses }}</span>
+            </div>
+          </div>
       </div>
     </div>
   <!-- -->
-    <div v-for="(el, index) in listCat" v-bind:key="index">
-      <div class="row">
-        <div class="col-xs-1 text-left">-</div>
-        <div class="col-xs-7 text-left">
-          <h5>{{el.nom}}</h5>
-        </div>
-        <div class="col-xs-4 text-right">
-          <h5>{{groupe[el.nom]}} CHF</h5>
-        </div>
+    <ul class="list-group" heigth="50px">
+      <div v-for="(el, index) in listCat" v-bind:key="index">
+        <li class="list-group-item" v-bind:style="{ 'background-color': el.couleur }">
+          <div class="row">
+            <div class="col-xs-4 text-left">
+              <img :src="el.image" :alt="el.nom" width="40px" height="40px">
+            </div>
+            <div class="col-xs-4 text-left">
+              <h4>{{el.nom}}</h4>
+            </div>
+            <div class="col-xs-4 text-right">
+              <h4>{{groupe[el.nom]}} CHF</h4>
+            </div>
+          </div>
+        </li>
       </div>
-    </div>
+    </ul>
  
     <div class="row">
       <div class="col-xs-8 text-left">
-        <h5><b>Total</b></h5>
+        <h3><b>Total</b></h3>
       </div>
       <div class="col-xs-4 text-right">
-        <h5><b>{{ $root.depenses }} CHF</b></h5>
+        <h3><b>{{ $root.depenses }} CHF</b></h3>
       </div>
     </div> 
   </div>

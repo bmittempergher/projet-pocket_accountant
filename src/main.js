@@ -30,11 +30,11 @@ $(document).ready(() => {
             } catch (e) {
                 listTransactions = [
                 { date: '05.07.2017', categorie: 'Alimentaire', note: 'McDonald', montant: 16.80 },
-                { date: '06.07.2017', categorie: 'Loisir', note: 'Jeu', montant: 20.80 },
+                { date: '06.07.2017', categorie: 'Loisirs', note: 'Jeu', montant: 20.80 },
                 { date: '05.07.2017', categorie: 'Alimentaire', note: 'SubWay', montant: 11.20 },
-                { date: '06.07.2017', categorie: 'Loisir', note: 'Piscine', montant: 12.80 },
+                { date: '06.07.2017', categorie: 'Loisirs', note: 'Piscine', montant: 12.80 },
                 { date: '05.07.2017', categorie: 'Alimentaire', note: 'McDonald', montant: 16 },
-                { date: '06.07.2017', categorie: 'Loisir', note: 'Jeu', montant: 20.80 },
+                { date: '06.07.2017', categorie: 'Loisirs', note: 'Jeu', montant: 20.80 },
                 { date: '05.07.2017', categorie: 'Transport', note: 'AG', montant: 68 },
                 { date: '06.07.2017', categorie: 'Divers', note: 'Facture salt', montant: 39 },
                 { date: '08.07.2017', categorie: 'Habillement', note: 'Pull', montant: 40.80 }
@@ -44,12 +44,12 @@ $(document).ready(() => {
                 budget: 400.00,
                 listTransactions,
                 listCategories: [
-                { nom: 'Alimentaire', couleur: '#FF0000', image: '../static/img/icon_alimentaire.jpg' },
-                { nom: 'Loisirs', couleur: '#00FF00', image: '../static/img/icon_loisir.jpg' },
-                { nom: 'Logement', couleur: '#0000FF', image: '../static/img/icon_logement.jpg' },
-                { nom: 'Transport', couleur: '#FF0000', image: '../static/img/icon_transport.jpg' },
-                { nom: 'Habillement', couleur: '#FF0000', image: '../static/img/icon_habit.jpg' },
-                { nom: 'Divers', couleur: '#FF0000', image: '../static/img/icon_divers.jpg' }
+                { nom: 'Alimentaire', couleur: '#29B6F6', image: '../static/img/icon_alimentaire.jpg' },
+                { nom: 'Loisirs', couleur: '#9CCC65', image: '../static/img/icon_loisir.jpg' },
+                { nom: 'Logement', couleur: '#FFEE58', image: '../static/img/icon_logement.jpg' },
+                { nom: 'Transport', couleur: '#FFA726', image: '../static/img/icon_transport.jpg' },
+                { nom: 'Habillement', couleur: '#AB47BC', image: '../static/img/icon_habit.jpg' },
+                { nom: 'Divers', couleur: '#EF5350', image: '../static/img/icon_divers.jpg' }
                 ]
             };
         },
@@ -80,3 +80,14 @@ $(document).ready(() => {
         }
     });
 });
+
+/*
+listTransactionParDate (date) {
+    return this.listTransactions.reduce((date, transaction) => {
+        if (transaction.date !== date) {
+            return transaction;
+        } else {
+            return false;
+        }
+    });
+} */
