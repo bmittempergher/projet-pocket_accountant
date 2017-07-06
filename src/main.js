@@ -89,7 +89,6 @@ $(document).ready(() => {
             },
             supprimerDepense (transaction) {
                 this.listTransactions.splice(this.listTransactions.indexOf(transaction), 1);
-                // localStorage.removeItem(transaction);
             }
         }
     });

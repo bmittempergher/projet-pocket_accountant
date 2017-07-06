@@ -2,6 +2,11 @@
 
 > Application web permettant à l'utilisateur d'avoir un suivi des dépenses, une analyse de ces dernières, un budget prévisionnel
 
+## Auteurs
+* Valentin Du Bois
+* Bastien Mittempergher
+
+
 ## Fonctionnalités
 
 1. Visualiser ses dépenses
@@ -141,7 +146,7 @@ Télécharger et installer Node.js
     import $ from 'jquery';
     import 'bootstrap';
     import 'bootstrap/dist/css/bootstrap.min.css';
-    import 'bootswatch/cosmo/bootstrap.min.css';
+    import 'bootswatch/journal/bootstrap.min.css';
 
 
 ### 8. Créer un fichier pour customiser personnelement vos pages
@@ -154,34 +159,7 @@ Télécharger et installer Node.js
 
 > Bootstrap
 
-> Bootswatch - Cosmo
-
-## Git
-
-> Après l'installation de git, il faut modifier le fichier de config
-> Il se trouve dans le dossier cacher à la racine de votre projet : **.git/config**
-
-> Ajouter une section `[user]` avec les informations suivantes :
-
-    email = votre@email.ch
-    name = votre_nom
-
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+> [Bootswatch - journal](https://bootswatch.com/journal/)
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
