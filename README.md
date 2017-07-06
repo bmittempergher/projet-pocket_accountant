@@ -40,6 +40,12 @@
 
 # Architecture et naviguation
 
+## Maquettes
+
+<img src="./static/img/maquetteA.jpg">
+
+<img src="./static/img/maquetteB.jpg">
+
 ## Navigation
 * La navigation entre les différentes pages se fait avec une barre de naviguation bootstrap qui se trouve dans index.html
     * Nouveau : Permet d'ajouter une dépenses
