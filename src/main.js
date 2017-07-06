@@ -44,12 +44,12 @@ $(document).ready(() => {
                 budget: 400.00,
                 listTransactions,
                 listCategories: [
-                { nom: 'Alimentaire', couleur: '#29B6F6', image: '../static/img/icon_alimentaire.jpg' },
-                { nom: 'Loisirs', couleur: '#9CCC65', image: '../static/img/icon_loisir.jpg' },
-                { nom: 'Logement', couleur: '#FFEE58', image: '../static/img/icon_logement.jpg' },
-                { nom: 'Transport', couleur: '#FFA726', image: '../static/img/icon_transport.jpg' },
-                { nom: 'Habillement', couleur: '#AB47BC', image: '../static/img/icon_habit.jpg' },
-                { nom: 'Divers', couleur: '#EF5350', image: '../static/img/icon_divers.jpg' }
+                { nom: 'Alimentaire', couleur: '#29B6F6', image: 'assets/img/icon_alimentaire.jpg' },
+                { nom: 'Loisirs', couleur: '#9CCC65', image: 'assets/img/icon_loisir.jpg' },
+                { nom: 'Logement', couleur: '#FFEE58', image: 'assets/img/icon_logement.jpg' },
+                { nom: 'Transport', couleur: '#FFA726', image: 'assets/img/icon_transport.jpg' },
+                { nom: 'Habillement', couleur: '#AB47BC', image: 'assets/img/icon_habit.jpg' },
+                { nom: 'Divers', couleur: '#EF5350', image: 'assets/img/icon_divers.jpg' }
                 ]
             };
         },
